@@ -92,10 +92,13 @@ export const Contact = classed(
 
 export const ContactSection = classed(
   "div",
-  "flex flex-wrap gap-x-4 items-center"
+  "grid grid-cols-1 xs:grid-cols-2 w-full sm:flex flex-wrap items-center gap-1 md:gap-2"
 );
 
-export const ContactItem = classed("div", "flex items-center gap-1");
+export const ContactItem = classed(
+  "div",
+  "flex items-center gap-1 [&>svg]:size-4 [&>svg]:shrink-0 whitespace-nowrap"
+);
 
 export const ContactLink = classed(
   "a",

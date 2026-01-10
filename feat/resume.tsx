@@ -47,7 +47,7 @@ export function Resume() {
         <Contact>
           <ContactSection>
             <ContactItem>
-              <Mail size={16} />
+              <Mail />
               <ContactLink
                 href="mailto:hlltvfk@gmail.com"
                 target="_blank"
@@ -58,7 +58,7 @@ export function Resume() {
               </ContactLink>
             </ContactItem>
             <ContactItem>
-              <Mail size={16} />
+              <Mail />
               <ContactLink
                 href="mailto:teyfiik@outlook.com"
                 target="_blank"
@@ -69,7 +69,7 @@ export function Resume() {
               </ContactLink>
             </ContactItem>
             <ContactItem>
-              <SiWhatsapp size={16} />
+              <SiWhatsapp />
               <ContactLink
                 href="https://wa.me/905425085278"
                 target="_blank"
@@ -79,12 +79,11 @@ export function Resume() {
                 (+90) 542-508-5278
               </ContactLink>
             </ContactItem>
-          </ContactSection>
-          <ContactSection>
+
             <ContactItem>
-              <MapPin size={16} />
+              <MapPin />
               <ContactLink
-                href="ttps://maps.google.com/maps?q=Istanbul,Turkey"
+                href="https://maps.google.com/maps?q=Istanbul,Turkey"
                 target="_blank"
                 rel="noreferrer"
                 variant="underline"
@@ -93,7 +92,7 @@ export function Resume() {
               </ContactLink>
             </ContactItem>
             <ContactItem>
-              <SiGithub size={16} />
+              <SiGithub />
               <ContactLink
                 href="https://github.com/teyfix"
                 target="_blank"
@@ -104,7 +103,7 @@ export function Resume() {
               </ContactLink>
             </ContactItem>
             <ContactItem>
-              <SiLinkedin size={16} />
+              <SiLinkedin />
               <ContactLink
                 href="https://linkedin.com/in/teyfik/"
                 target="_blank"
