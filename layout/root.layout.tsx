@@ -1,17 +1,17 @@
 import "@/theme/globals.css";
 
 import { classed } from "@/lib/utils";
+import ogImage from "@/public/og-image.jpeg";
 import { fontMono, fontSans, fontSerif } from "@/theme/fonts";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import metadata from "./root/metadata.json";
-import ogImage from "@/public/og-image.jpeg";
 
-const GITHUB_REPO = process.env.GITHUB_REPO;
+const GITHUB_REPO = process.env.GITHUB_REPO || "teyfix.github.io";
 
 export const generateMetadata = (): Metadata => ({
-  metadataBase: GITHUB_REPO ? new URL(`https://${GITHUB_REPO}`) : undefined,
+  metadataBase: new URL(`https://${GITHUB_REPO}`),
   title: metadata.title,
   description: metadata.description,
   keywords: metadata.keywords,
@@ -63,7 +63,7 @@ export const generateMetadata = (): Metadata => ({
 
 const Body = classed(
   "body",
-  `${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`
+  `${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`,
 );
 
 export default function RootLayout({ children }: PropsWithChildren) {
