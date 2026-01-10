@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import metadata from "./root/metadata.json";
+import ogImage from "@/public/og-image.jpeg";
 
 const GITHUB_REPO = process.env.GITHUB_REPO;
 
@@ -14,8 +15,8 @@ export const generateMetadata = (): Metadata => ({
   title: metadata.title,
   description: metadata.description,
   keywords: metadata.keywords,
-  authors: [{ name: "Halil Teyfik Dolmaci", url: "https://github.com/teyfix" }],
-  creator: "Halil Teyfik Dolmaci",
+  authors: metadata.authors,
+  creator: metadata.creator,
   openGraph: {
     title: metadata.title,
     description: metadata.description,
@@ -25,9 +26,9 @@ export const generateMetadata = (): Metadata => ({
     locale: "en_US",
     images: [
       {
-        url: "/og-image.jpeg", // Add your profile image here
-        width: 1200,
-        height: 630,
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
         alt: metadata.title,
       },
     ],
@@ -36,7 +37,7 @@ export const generateMetadata = (): Metadata => ({
     card: "summary_large_image",
     title: metadata.title,
     description: metadata.description,
-    images: ["/og-image.jpeg"],
+    images: [ogImage.src],
   },
   robots: {
     index: true,
