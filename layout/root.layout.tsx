@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png", // Add your profile image here
+        url: "/og-image.jpeg", // Add your profile image here
         width: 1200,
         height: 630,
         alt: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
     description:
       "Senior Full-Stack Engineer with 10+ years building high-performance, observable systems for 250K+ users.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpeg"],
   },
   robots: {
     index: true,
