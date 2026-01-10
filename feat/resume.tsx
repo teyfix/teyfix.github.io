@@ -171,7 +171,7 @@ export function Resume() {
             </CompetencyContent>
           </CompetencyItem>
 
-          <CompetencyItem className="lg:col-span-2">
+          <CompetencyItem expand>
             <CompetencyTitle>Methodologies & Practices</CompetencyTitle>
             <CompetencyContent>
               Agile/Scrum, Test-Driven Development (TDD), Continuous
@@ -259,7 +259,7 @@ export function Resume() {
             </SkillList>
           </SkillCategory>
 
-          <SkillCategory className="lg:col-span-2">
+          <SkillCategory expand>
             <SkillTitle>Authentication & Security</SkillTitle>
             <SkillList>
               OAuth 2.0, JWT, Keycloak, Next-Auth, RBAC, Secure Application
@@ -1344,7 +1344,7 @@ export function Resume() {
         </Article>
       </Section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 print:grid-cols-2 gap-2">
         {/* Education */}
         <Section>
           <Heading level={2}>Education</Heading>
