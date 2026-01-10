@@ -48,7 +48,12 @@ export function Resume() {
           <ContactSection>
             <ContactItem>
               <Mail size={16} />
-              <ContactLink href="mailto:hlltvfk@gmail.com" variant="underline">
+              <ContactLink
+                href="mailto:hlltvfk@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                variant="underline"
+              >
                 hlltvfk@gmail.com
               </ContactLink>
             </ContactItem>
@@ -56,6 +61,8 @@ export function Resume() {
               <Mail size={16} />
               <ContactLink
                 href="mailto:teyfiik@outlook.com"
+                target="_blank"
+                rel="noreferrer"
                 variant="underline"
               >
                 teyfiik@outlook.com
@@ -65,6 +72,8 @@ export function Resume() {
               <SiWhatsapp size={16} />
               <ContactLink
                 href="https://wa.me/905425085278"
+                target="_blank"
+                rel="noreferrer"
                 variant="underline"
               >
                 (+90) 542-508-5278
@@ -76,6 +85,8 @@ export function Resume() {
               <MapPin size={16} />
               <ContactLink
                 href="ttps://maps.google.com/maps?q=Istanbul,Turkey"
+                target="_blank"
+                rel="noreferrer"
                 variant="underline"
               >
                 Istanbul, Turkey
@@ -86,6 +97,7 @@ export function Resume() {
               <ContactLink
                 href="https://github.com/teyfix"
                 target="_blank"
+                rel="noreferrer"
                 variant="underline"
               >
                 github.com/teyfix
@@ -96,6 +108,7 @@ export function Resume() {
               <ContactLink
                 href="https://linkedin.com/in/teyfik/"
                 target="_blank"
+                rel="noreferrer"
                 variant="underline"
               >
                 linkedin.com/in/teyfik
@@ -1413,6 +1426,7 @@ export function Resume() {
             <ContactLink
               href="https://github.com/teyfix"
               target="_blank"
+              rel="noreferrer"
               variant="underline"
             >
               @teyfix
