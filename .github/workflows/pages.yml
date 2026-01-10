@@ -18,20 +18,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Restore bun cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.bun/install/cache
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Restore Next.js cache
+      - name: Restore build cache
         uses: actions/cache@v4
         with:
           # See here for caching with `yarn`, `bun` or other package managers https://github.com/actions/cache/blob/main/examples.md or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
-            ~/.npm
+            ~/.bun/install/cache
             ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
           key:
