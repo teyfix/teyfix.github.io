@@ -1,13 +1,15 @@
 import "@/theme/globals.css";
 
 import { classed } from "@/lib/utils";
-import { fontSerif, fontSans, fontMono } from "@/theme/fonts";
+import { fontMono, fontSans, fontSerif } from "@/theme/fonts";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 
-export const metadata: Metadata = {
-  metadataBase: process.env.GITHUB_REPO,
+const GITHUB_REPO = process.env.GITHUB_REPO;
+
+export const generateMetadata = (): Metadata => ({
+  metadataBase: GITHUB_REPO ? new URL(`https://${GITHUB_REPO}`) : undefined,
   title: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
   description:
     "Senior Full-Stack Engineer with 10+ years building high-performance, observable systems for 250K+ users. Specialized in performance engineering, real-time architectures, and AI/ML platforms.",
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
     canonical: "https://teyfix.github.io", // Update with your actual domain
   },
   category: "technology",
-};
+});
 
 const Body = classed(
   "body",
