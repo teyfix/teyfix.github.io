@@ -4,10 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* --font-mono: var(--font-jetbrains-mono); */
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
-  --font-mono: var(--app-font-mono);
+  /* monospace font is not in use at the moment */
+  /* Commented out for resource optimization */
+  /* --font-mono: var(--app-font-mono); */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

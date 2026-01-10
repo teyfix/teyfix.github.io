@@ -2,7 +2,8 @@ import "@/theme/globals.css";
 
 import { classed } from "@/lib/utils";
 import ogImage from "@/public/og-image.jpeg";
-import { fontMono, fontSans, fontSerif } from "@/theme/fonts";
+import { fontSans, fontSerif } from "@/theme/fonts";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
@@ -63,7 +64,13 @@ export const generateMetadata = (): Metadata => ({
 
 const Body = classed(
   "body",
-  `${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`,
+  clsx(
+    fontSans.variable,
+    // Monospace font is not in use at the moment
+    // Commented out for resource optimization
+    // fontMono.variable,
+    fontSerif.variable,
+  ),
 );
 
 export default function RootLayout({ children }: PropsWithChildren) {
