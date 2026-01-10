@@ -5,50 +5,37 @@ import { fontMono, fontSans, fontSerif } from "@/theme/fonts";
 import type { Metadata } from "next";
 import Head from "next/head";
 import { PropsWithChildren } from "react";
+import metadata from "./root/metadata.json";
 
 const GITHUB_REPO = process.env.GITHUB_REPO;
 
 export const generateMetadata = (): Metadata => ({
   metadataBase: GITHUB_REPO ? new URL(`https://${GITHUB_REPO}`) : undefined,
-  title: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
-  description:
-    "Senior Full-Stack Engineer with 10+ years building high-performance, observable systems for 250K+ users. Specialized in performance engineering, real-time architectures, and AI/ML platforms.",
-  keywords: [
-    "Full-Stack Engineer",
-    "TypeScript",
-    "Node.js",
-    "React",
-    "AWS",
-    "Performance Engineering",
-    "AI/ML",
-    "Software Engineer",
-    "Senior Developer",
-    "Tech Leadership",
-  ],
+  title: metadata.title,
+  description: metadata.description,
+  keywords: metadata.keywords,
   authors: [{ name: "Halil Teyfik Dolmaci", url: "https://github.com/teyfix" }],
   creator: "Halil Teyfik Dolmaci",
   openGraph: {
-    title: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
-    description:
-      "Senior Full-Stack Engineer with 10+ years building high-performance, observable systems for 250K+ users. Specialized in performance engineering, real-time architectures, and AI/ML platforms.",
+    title: metadata.title,
+    description: metadata.description,
     type: "profile",
     url: "https://linkedin.com/in/teyfik/",
-    siteName: "Halil Teyfik Dolmaci Resume",
+    siteName: `${metadata.creator} - Resume`,
     locale: "en_US",
     images: [
       {
         url: "/og-image.jpeg", // Add your profile image here
         width: 1200,
         height: 630,
-        alt: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
+        alt: metadata.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halil Teyfik Dolmaci - Senior Full-Stack Engineer",
-    description:
-      "Senior Full-Stack Engineer with 10+ years building high-performance, observable systems for 250K+ users.",
+    title: metadata.title,
+    description: metadata.description,
     images: ["/og-image.jpeg"],
   },
   robots: {
