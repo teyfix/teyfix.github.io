@@ -1064,7 +1064,7 @@ export function Resume() {
                   60fps
                 </Text>{" "}
                 during volatile market periods by manual{" "}
-                <code className="text-xs bg-gray-100 px-1 py-0.5 rounded">
+                <code className="rounded bg-gray-100 px-1 py-0.5 text-xs">
                   ChangeDetectorRef
                 </code>{" "}
                 updates, preventing UI freezes under high-frequency WebSocket
@@ -1344,7 +1344,7 @@ export function Resume() {
         </Article>
       </Section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 print:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 print:grid-cols-2">
         {/* Education */}
         <Section>
           <Heading level={2}>Education</Heading>
