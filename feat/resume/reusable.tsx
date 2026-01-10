@@ -4,7 +4,7 @@ import { isValidElement } from "react";
 
 export const Container = classed(
   "div",
-  "max-w-5xl mx-auto px-6 py-4 print:px-0 print:py-0 font-sans print:font-serif text-gray-900"
+  "max-w-5xl mx-auto px-3 lg:px-6 py-4 print:px-0 print:py-0 font-sans print:font-serif text-gray-900"
 );
 
 export const Header = classed("header", "mb-4 border-b-2 border-gray-900 pb-4");
@@ -12,9 +12,9 @@ export const Header = classed("header", "mb-4 border-b-2 border-gray-900 pb-4");
 export const Heading = classed("h1", "font-bold", {
   variants: {
     level: {
-      1: "text-xl uppercase tracking-tight",
-      2: "text-md font-bold border-b border-gray-300 pb-1 uppercase text-gray-800",
-      3: "text-sm font-semibold",
+      1: "text-lg lg:text-xl uppercase tracking-tight",
+      2: "text-sm lg:text-base font-bold border-b border-gray-300 pb-1 uppercase text-gray-800",
+      3: "text-xs lg:text-sm font-semibold",
       4: "text-xs font-semibold",
     },
   },
@@ -118,13 +118,13 @@ export const ContactLink = classed(
 
 export const ExperienceHeader = classed(
   "div",
-  "flex justify-between items-baseline mb-0.5"
+  "flex flex-wrap justify-between items-baseline mb-0.5"
 );
 
 export const ExperienceTitle = classed("strong", "font-bold", {
   variants: {
     size: {
-      base: "text-sm",
+      base: "text-xs lg:text-sm",
       lg: "text-base",
     },
   },
@@ -133,14 +133,20 @@ export const ExperienceTitle = classed("strong", "font-bold", {
   },
 });
 
-export const ExperienceDetails = classed("div", "flex gap-2 items-baseline");
+export const ExperienceDetails = classed(
+  "div",
+  "flex gap-2 items-baseline min-w-full lg:min-w-auto justify-between mt-1 lg:mt-0"
+);
 
 export const ExperienceDate = classed(
   "span",
-  "text-[11px] font-medium text-gray-600 uppercase"
+  "text-[11px] font-medium text-gray-600 italic"
 );
 
-export const TeamInfo = classed("p", "text-[11px] text-gray-500 mb-2 italic");
+export const TeamInfo = classed(
+  "p",
+  "text-[11px] text-gray-500 mb-2 italic mt-2 lg:mt-0"
+);
 
 export const ProjectContainer = classed(
   "div",
@@ -205,17 +211,21 @@ export const CalloutTitle = classed("h3", "font-bold text-[11px] mb-0.5");
 
 // ==================== Competency Components ====================
 
-export const CompetencyGrid = classed("div", "grid grid-cols-2", {
-  variants: {
-    spacing: {
-      none: "",
-      sm: "gap-2",
+export const CompetencyGrid = classed(
+  "div",
+  "grid grid-cols-1 lg:grid-cols-2",
+  {
+    variants: {
+      spacing: {
+        none: "",
+        sm: "gap-2",
+      },
     },
-  },
-  defaultVariants: {
-    spacing: "sm",
-  },
-});
+    defaultVariants: {
+      spacing: "sm",
+    },
+  }
+);
 
 export const CompetencyItem = classed("div", "break-inside-avoid");
 
@@ -228,7 +238,7 @@ export const CompetencyContent = classed(
 
 // ==================== Skills Components ====================
 
-export const SkillsGrid = classed("div", "grid grid-cols-2 gap-2");
+export const SkillsGrid = classed("div", "grid lg:grid-cols-2 gap-2");
 
 export const SkillCategory = classed("div", "break-inside-avoid");
 
@@ -248,7 +258,7 @@ export const EducationHeader = classed("div", "", {
   variants: {
     layout: {
       vertical: "grid",
-      horizontal: "flex",
+      horizontal: "grid lg:flex",
     },
   },
   defaultVariants: {

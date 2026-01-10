@@ -172,7 +172,7 @@ export function Resume() {
             </CompetencyContent>
           </CompetencyItem>
 
-          <CompetencyItem className="col-span-2">
+          <CompetencyItem className="lg:col-span-2">
             <CompetencyTitle>Methodologies & Practices</CompetencyTitle>
             <CompetencyContent>
               Agile/Scrum, Test-Driven Development (TDD), Continuous
@@ -260,7 +260,7 @@ export function Resume() {
             </SkillList>
           </SkillCategory>
 
-          <SkillCategory className="col-span-2">
+          <SkillCategory className="lg:col-span-2">
             <SkillTitle>Authentication & Security</SkillTitle>
             <SkillList>
               OAuth 2.0, JWT, Keycloak, Next-Auth, RBAC, Secure Application
@@ -1345,7 +1345,7 @@ export function Resume() {
         </Article>
       </Section>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
         {/* Education */}
         <Section>
           <Heading level={2}>Education</Heading>
@@ -1410,7 +1410,8 @@ export function Resume() {
 
           <EducationHeader>
             <ExperienceTitle size="base">
-              Database Design & Query Optimization (PostgreSQL & NoSQL)
+              <span>Database Design & Query Optimization </span>
+              <span className="whitespace-nowrap">(PostgreSQL & NoSQL)</span>
             </ExperienceTitle>
             <ExperienceDate>(Coursera, 2024)</ExperienceDate>
           </EducationHeader>
