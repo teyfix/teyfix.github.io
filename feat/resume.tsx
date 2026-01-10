@@ -2,6 +2,7 @@ import { Mail, MapPin } from "lucide-react";
 import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import {
   Article,
+  ArticleHeader,
   Callout,
   CalloutTitle,
   CompetencyContent,
@@ -43,7 +44,7 @@ export function Resume() {
       <Header>
         <Heading level={1}>Halil Teyfik Dolmaci</Heading>
 
-        <Contact spacing="xs">
+        <Contact>
           <ContactSection>
             <ContactItem>
               <Mail size={16} />
@@ -107,7 +108,7 @@ export function Resume() {
       {/* Professional Summary */}
       <Section>
         <Heading level={2}>Professional Summary</Heading>
-        <Text>
+        <Text size="xs">
           Senior Full-Stack Engineer with 10+ years building high-performance,
           observable systems for 250K+ users. Specialized in performance
           engineering (50x improvements), real-time architectures, and emerging
@@ -158,7 +159,7 @@ export function Resume() {
             </CompetencyContent>
           </CompetencyItem>
 
-          <CompetencyItem>
+          <CompetencyItem className="col-span-2">
             <CompetencyTitle>Methodologies & Practices</CompetencyTitle>
             <CompetencyContent>
               Agile/Scrum, Test-Driven Development (TDD), Continuous
@@ -193,15 +194,6 @@ export function Resume() {
           </SkillCategory>
 
           <SkillCategory>
-            <SkillTitle>Cloud & DevOps</SkillTitle>
-            <SkillList>
-              AWS (EC2, S3, Lambda, RDS, CloudFront, EKS), Google Cloud Platform
-              (GCP), Kubernetes, Docker, Terraform, Traefik, CI/CD Pipelines,
-              GitHub Actions, Rancher, MinIO (S3 API), Infrastructure as Code
-            </SkillList>
-          </SkillCategory>
-
-          <SkillCategory>
             <SkillTitle>Databases</SkillTitle>
             <SkillList>
               PostgreSQL, ClickHouse, TimescaleDB, Redis, MongoDB, MySQL,
@@ -218,23 +210,21 @@ export function Resume() {
           </SkillCategory>
 
           <SkillCategory>
+            <SkillTitle>Cloud & DevOps</SkillTitle>
+            <SkillList>
+              AWS (EC2, S3, Lambda, RDS, CloudFront, EKS), Google Cloud Platform
+              (GCP), Kubernetes, Docker, Terraform, Traefik, CI/CD Pipelines,
+              GitHub Actions, Rancher, MinIO (S3 API), Infrastructure as Code
+            </SkillList>
+          </SkillCategory>
+
+          <SkillCategory>
             <SkillTitle>Monitoring & Observability</SkillTitle>
             <SkillList>
               Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana),
               OpenTelemetry, Pino, Pino-Elasticsearch, Application Performance
               Monitoring (APM), Distributed Tracing, Metrics Collection, Log
               Aggregation
-            </SkillList>
-          </SkillCategory>
-
-          <SkillCategory>
-            <SkillTitle>Authentication & Security</SkillTitle>
-            <SkillList>
-              OAuth 2.0, JWT, Keycloak, Next-Auth, RBAC, Secure Application
-              Development, API Security Best Practices, DDoS Protection (Kong
-              Gateway, rate limiting), Secrets Management, Input Validation &
-              Sanitization, HTTPS/TLS Configuration, CORS Policy Implementation,
-              Security Headers (CSP, HSTS), Dependency Vulnerability Scanning
             </SkillList>
           </SkillCategory>
 
@@ -254,6 +244,17 @@ export function Resume() {
               (expanding for ML/AI), Go (active learning for
               performance-critical systems), Rust (exploring for systems
               programming)
+            </SkillList>
+          </SkillCategory>
+
+          <SkillCategory className="col-span-2">
+            <SkillTitle>Authentication & Security</SkillTitle>
+            <SkillList>
+              OAuth 2.0, JWT, Keycloak, Next-Auth, RBAC, Secure Application
+              Development, API Security Best Practices, DDoS Protection (Kong
+              Gateway, rate limiting), Secrets Management, Input Validation &
+              Sanitization, HTTPS/TLS Configuration, CORS Policy Implementation,
+              Security Headers (CSP, HSTS), Dependency Vulnerability Scanning
             </SkillList>
           </SkillCategory>
         </SkillsGrid>
@@ -314,280 +315,285 @@ export function Resume() {
 
       {/* Professional Experience */}
       <Section>
-        <Heading level={2}>Professional Experience</Heading>
+        <div className="print:break-inside-avoid">
+          <Heading level={2}>Professional Experience</Heading>
 
-        {/* User Experience Center */}
-        <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>User Experience Center</ExperienceTitle>
-              <ExperienceDate>Sep 2024 - Present</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          {/* User Experience Center */}
+          <Article>
+            <ArticleHeader>
+              <ExperienceHeader>
+                <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
+                <ExperienceDetails>
+                  <ExperienceTitle>User Experience Center</ExperienceTitle>
+                  <ExperienceDate>Sep 2024 - Present</ExperienceDate>
+                </ExperienceDetails>
+              </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              8 engineers (3 constant collaboration, 1 regular coordination
-              across projects)
-            </Text>
-          </TeamInfo>
-
-          <List spacing="sm">
-            <ListItem size="sm">
-              Led decision-making on technical architecture and implementation
-              across frontend, data engineering, and API design, ensuring high
-              performance and clear communication
-            </ListItem>
-            <ListItem size="sm">
-              Guided engineers on API design, performance optimization,
-              observability, and OpenAPI documentation, improving team velocity
-              and maintainable workflows
-            </ListItem>
-            <ListItem size="sm">
-              Translated business requirements into scalable technical designs
-              understandable by non-technical stakeholders
-            </ListItem>
-            <ListItem size="sm">
-              Rapidly adopted and applied new tools and frameworks, including{" "}
-              <Text weight="semibold" as="span" size="sm">
-                NATS, ClickHouse, TimescaleDB
-              </Text>
-              , and vector-based AI pipelines
-            </ListItem>
-          </List>
-
-          <ProjectContainer>
-            <ProjectTitle>
-              AI-Powered Dating Platform (Pair.center @ UX Center)
-            </ProjectTitle>
-            <List spacing="sm">
-              <ListItem size="sm">
-                Enabled{" "}
+              <TeamInfo>
                 <Text weight="semibold" as="span" size="sm">
-                  1M+ daily events
-                </Text>{" "}
-                (peak 50K ops/sec) with{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  99.9% uptime
-                </Text>{" "}
-                via a{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  high-throughput event-driven pipeline
-                </Text>{" "}
-                built with{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  Node.js (Bun runtime) + pg-copy-streams
+                  {"Team: "}
                 </Text>
-                , including{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  Redis-based deduplication
-                </Text>{" "}
-                with 3-second idempotency windows
-              </ListItem>
-              <ListItem size="sm">
-                Built ML recommendation engine using vector embeddings,
-                improving match accuracy by{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  20%
+                <Text as="span" size="sm">
+                  8 engineers (3 constant collaboration, 1 regular coordination
+                  across projects)
                 </Text>
-              </ListItem>
-              <ListItem size="sm">
-                Reduced storage footprint by{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  85%
-                </Text>{" "}
-                using{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  TimescaleDB compression
-                </Text>{" "}
-                while maintaining low-latency queries
-              </ListItem>
-              <ListItem size="sm">
-                Extended{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  TimescaleDB
-                </Text>{" "}
-                with{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  Postgres Wrappers
-                </Text>{" "}
-                to enable ClickHouse FDW, bridging transactional and analytical
-                systems with type-safe{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  drizzle-orm
-                </Text>{" "}
-                queries
-              </ListItem>
-              <ListItem size="sm">
-                Designed{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  NATS-backed WebSocket gateway
-                </Text>{" "}
-                to offload stateful connections from the backend, enabling
-                real-time messaging with guaranteed delivery and JetStream
-                support for new clients
-              </ListItem>
-              <ListItem size="sm">
-                <Text weight="semibold" as="span" size="sm">
-                  Developed a flexible quota validation service
-                </Text>{" "}
-                utilizing{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  SQL window functions
-                </Text>{" "}
-                and{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  CTEs
-                </Text>{" "}
-                to aggregate real-time usage logs, supporting complex renewal
-                cycles and ensuring 100% data integrity for user action limits
-              </ListItem>
-            </List>
-            <TechStack>
-              <Text weight="semibold" as="span" size="xs">
-                Stack:
-              </Text>
-              <Text as="span" size="xs" color="muted">
-                Kafka, PostgreSQL (CTEs, window functions, TimescaleDB),
-                ClickHouse, Redis, NATS, pg-copy-streams, Node.js (Bun runtime),
-                ML embeddings, Drizzle ORM
-              </Text>
-            </TechStack>
-          </ProjectContainer>
+              </TeamInfo>
 
-          <ProjectContainer>
-            <ProjectTitle>
-              E-Commerce Performance Engineering (Pazmanya.com @ UX Center)
-            </ProjectTitle>
-            <List spacing="sm">
-              <ListItem size="sm">
-                Accelerated page load times and improved infrastructure
-                efficiency via{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  intelligent caching strategies
+              <List spacing="sm">
+                <ListItem size="sm">
+                  Led decision-making on technical architecture and
+                  implementation across frontend, data engineering, and API
+                  design, ensuring high performance and clear communication
+                </ListItem>
+                <ListItem size="sm">
+                  Guided engineers on API design, performance optimization,
+                  observability, and OpenAPI documentation, improving team
+                  velocity and maintainable workflows
+                </ListItem>
+                <ListItem size="sm">
+                  Translated business requirements into scalable technical
+                  designs understandable by non-technical stakeholders
+                </ListItem>
+                <ListItem size="sm">
+                  Rapidly adopted and applied new tools and frameworks,
+                  including{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    NATS, ClickHouse, TimescaleDB
+                  </Text>
+                  , and vector-based AI pipelines
+                </ListItem>
+              </List>
+            </ArticleHeader>
+            <ProjectContainer>
+              <ProjectTitle>
+                AI-Powered Dating Platform (Pair.center @ UX Center)
+              </ProjectTitle>
+              <List spacing="sm">
+                <ListItem size="sm">
+                  Enabled{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    1M+ daily events
+                  </Text>{" "}
+                  (peak 50K ops/sec) with{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    99.9% uptime
+                  </Text>{" "}
+                  via a{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    high-throughput event-driven pipeline
+                  </Text>{" "}
+                  built with{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    Node.js (Bun runtime) + pg-copy-streams
+                  </Text>
+                  , including{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    Redis-based deduplication
+                  </Text>{" "}
+                  with 3-second idempotency windows
+                </ListItem>
+                <ListItem size="sm">
+                  Built ML recommendation engine using vector embeddings,
+                  improving match accuracy by{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    20%
+                  </Text>
+                </ListItem>
+                <ListItem size="sm">
+                  Reduced storage footprint by{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    85%
+                  </Text>{" "}
+                  using{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    TimescaleDB compression
+                  </Text>{" "}
+                  while maintaining low-latency queries
+                </ListItem>
+                <ListItem size="sm">
+                  Extended{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    TimescaleDB
+                  </Text>{" "}
+                  with{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    Postgres Wrappers
+                  </Text>{" "}
+                  to enable ClickHouse FDW, bridging transactional and
+                  analytical systems with type-safe{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    drizzle-orm
+                  </Text>{" "}
+                  queries
+                </ListItem>
+                <ListItem size="sm">
+                  Designed{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    NATS-backed WebSocket gateway
+                  </Text>{" "}
+                  to offload stateful connections from the backend, enabling
+                  real-time messaging with guaranteed delivery and JetStream
+                  support for new clients
+                </ListItem>
+                <ListItem size="sm">
+                  <Text weight="semibold" as="span" size="sm">
+                    Developed a flexible quota validation service
+                  </Text>{" "}
+                  utilizing{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    SQL window functions
+                  </Text>{" "}
+                  and{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    CTEs
+                  </Text>{" "}
+                  to aggregate real-time usage logs, supporting complex renewal
+                  cycles and ensuring 100% data integrity for user action limits
+                </ListItem>
+              </List>
+              <TechStack>
+                <Text weight="semibold" as="span" size="xs">
+                  Stack:
                 </Text>
-                , SSR/SSG, and optimized API layers
-              </ListItem>
-              <ListItem size="sm">
-                Integrated{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  imgproxy
-                </Text>{" "}
-                for 10× faster image processing with WebP/AVIF formats
-              </ListItem>
-              <ListItem size="sm">
-                Implemented automated{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  CI/CD pipelines
-                </Text>{" "}
-                for zero-downtime deployments with Docker, Kubernetes, and
-                GitHub Actions
-              </ListItem>
-            </List>
-            <TechStack>
-              <Text weight="semibold" as="span" size="xs">
-                Stack:
-              </Text>
-              <Text as="span" size="xs" color="muted">
-                Next.js, imgproxy, MinIO, S3, GitHub Actions, Docker, Redis,
-                Storybook
-              </Text>
-            </TechStack>
-          </ProjectContainer>
+                <Text as="span" size="xs" color="muted">
+                  Kafka, PostgreSQL (CTEs, window functions, TimescaleDB),
+                  ClickHouse, Redis, NATS, pg-copy-streams, Node.js (Bun
+                  runtime), ML embeddings, Drizzle ORM
+                </Text>
+              </TechStack>
+            </ProjectContainer>
 
-          <ProjectContainer>
-            <ProjectTitle>
-              Rewards Platform Engineering (Cashygo.com @ UX Center)
-            </ProjectTitle>
-            <List spacing="sm">
-              <ListItem size="sm">
-                Achieved{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  95+ Lighthouse scores
-                </Text>{" "}
-                with Largest Contentful Paint{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  &lt;1s
+            <ProjectContainer>
+              <ProjectTitle>
+                E-Commerce Performance Engineering (Pazmanya.com @ UX Center)
+              </ProjectTitle>
+              <List spacing="sm">
+                <ListItem size="sm">
+                  Accelerated page load times and improved infrastructure
+                  efficiency via{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    intelligent caching strategies
+                  </Text>
+                  , SSR/SSG, and optimized API layers
+                </ListItem>
+                <ListItem size="sm">
+                  Integrated{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    imgproxy
+                  </Text>{" "}
+                  for 10× faster image processing with WebP/AVIF formats
+                </ListItem>
+                <ListItem size="sm">
+                  Implemented automated{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    CI/CD pipelines
+                  </Text>{" "}
+                  for zero-downtime deployments with Docker, Kubernetes, and
+                  GitHub Actions
+                </ListItem>
+              </List>
+              <TechStack>
+                <Text weight="semibold" as="span" size="xs">
+                  Stack:
                 </Text>
-                , making results visible to customers
-              </ListItem>
-              <ListItem size="sm">
-                Guided backend engineers to adopt OpenAPI, deploy{" "}
-                <Text weight="semibold" as="span" size="sm">
-                  imgproxy
+                <Text as="span" size="xs" color="muted">
+                  Next.js, imgproxy, MinIO, S3, GitHub Actions, Docker, Redis,
+                  Storybook
                 </Text>
-                , and connect to S3, optimizing frontend workflows and
-                maintainability
-              </ListItem>
-            </List>
-            <TechStack>
-              <Text weight="semibold" as="span" size="xs">
-                Stack:
-              </Text>
-              <Text as="span" size="xs" color="muted">
-                Next.js, TypeScript, OpenAPI, Node.js, Docker, GitHub Actions,
-                Storybook, Lighthouse
-              </Text>
-            </TechStack>
-          </ProjectContainer>
-        </Article>
+              </TechStack>
+            </ProjectContainer>
+
+            <ProjectContainer>
+              <ProjectTitle>
+                Rewards Platform Engineering (Cashygo.com @ UX Center)
+              </ProjectTitle>
+              <List spacing="sm">
+                <ListItem size="sm">
+                  Achieved{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    95+ Lighthouse scores
+                  </Text>{" "}
+                  with Largest Contentful Paint{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    &lt;1s
+                  </Text>
+                  , making results visible to customers
+                </ListItem>
+                <ListItem size="sm">
+                  Guided backend engineers to adopt OpenAPI, deploy{" "}
+                  <Text weight="semibold" as="span" size="sm">
+                    imgproxy
+                  </Text>
+                  , and connect to S3, optimizing frontend workflows and
+                  maintainability
+                </ListItem>
+              </List>
+              <TechStack>
+                <Text weight="semibold" as="span" size="xs">
+                  Stack:
+                </Text>
+                <Text as="span" size="xs" color="muted">
+                  Next.js, TypeScript, OpenAPI, Node.js, Docker, GitHub Actions,
+                  Storybook, Lighthouse
+                </Text>
+              </TechStack>
+            </ProjectContainer>
+          </Article>
+        </div>
 
         {/* Osoci */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>Osoci</ExperienceTitle>
-              <ExperienceDate>Aug 2023 - Sep 2024</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>Osoci</ExperienceTitle>
+                <ExperienceDate>Aug 2023 - Sep 2024</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              7 engineers (3 constant collaboration, 4 regular); led
-              cross-functional team of 4 (team lead, 2 full-stack engineers, 1
-              designer) before lead departure
-            </Text>
-          </TeamInfo>
-
-          <List spacing="sm">
-            <ListItem size="sm">
-              Led a small cross-functional team (team lead, 2 full-stack
-              engineers, 1 designer), later taking ownership of platform
-              decisions after lead departure
-            </ListItem>
-            <ListItem size="sm">
-              Guided engineers on performance improvements and observability,
-              introducing better use of existing tools (e.g., MongoDB lookups vs
-              Mongoose population)
-            </ListItem>
-            <ListItem size="sm">
-              Translated business requirements into scalable technical
-              solutions, ensuring HR and non-technical stakeholders understood
-              architecture decisions
-            </ListItem>
-            <ListItem size="sm">
-              Quickly learned new tools and languages, including{" "}
+            <TeamInfo>
               <Text weight="semibold" as="span" size="sm">
-                Lua for custom Prosody plugins
+                {"Team: "}
               </Text>
-              , demonstrating adaptability to unfamiliar technologies
-            </ListItem>
-            <ListItem size="sm">
-              Maintained close communication with support team to understand
-              user pain points from feedback, translating qualitative reports
-              into quantitative performance metrics and actionable technical
-              improvements
-            </ListItem>
-          </List>
+              <Text as="span" size="sm">
+                7 engineers (3 constant collaboration, 4 regular); led
+                cross-functional team of 4 (team lead, 2 full-stack engineers, 1
+                designer) before lead departure
+              </Text>
+            </TeamInfo>
 
+            <List spacing="sm">
+              <ListItem size="sm">
+                Led a small cross-functional team (team lead, 2 full-stack
+                engineers, 1 designer), later taking ownership of platform
+                decisions after lead departure
+              </ListItem>
+              <ListItem size="sm">
+                Guided engineers on performance improvements and observability,
+                introducing better use of existing tools (e.g., MongoDB lookups
+                vs Mongoose population)
+              </ListItem>
+              <ListItem size="sm">
+                Translated business requirements into scalable technical
+                solutions, ensuring HR and non-technical stakeholders understood
+                architecture decisions
+              </ListItem>
+              <ListItem size="sm">
+                Quickly learned new tools and languages, including{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Lua for custom Prosody plugins
+                </Text>
+                , demonstrating adaptability to unfamiliar technologies
+              </ListItem>
+              <ListItem size="sm">
+                Maintained close communication with support team to understand
+                user pain points from feedback, translating qualitative reports
+                into quantitative performance metrics and actionable technical
+                improvements
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>Real-time Video Streaming (Alve)</ProjectTitle>
             <List spacing="sm">
@@ -656,49 +662,50 @@ export function Resume() {
 
         {/* Creatopy */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>Creatopy</ExperienceTitle>
-              <ExperienceDate>Mar 2022 - Aug 2023</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Senior Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>Creatopy</ExperienceTitle>
+                <ExperienceDate>Mar 2022 - Aug 2023</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              12 engineers (3 constant collaboration, 4 regular coordination
-              across product, design, and backend teams)
-            </Text>
-          </TeamInfo>
-
-          <List spacing="sm">
-            <ListItem size="sm">
-              Collaborated with product, design, and backend teams to deliver
-              features for a high-traffic digital ad platform serving 10K+
-              marketing teams across multiple channels
-            </ListItem>
-            <ListItem size="sm">
-              Standardized developer workflows with Windows WSL2 and CI/CD
-              automation, reducing onboarding time from 2 days to 4 hours and
-              cutting build/test friction
-            </ListItem>
-            <ListItem size="sm">
-              Identified and resolved performance bottlenecks, improving
-              template rendering speed by 35% and reducing overall CPU load on
-              high-volume pages
-            </ListItem>
-            <ListItem size="sm">
-              Streamlined designer-to-developer handoff by implementing{" "}
+            <TeamInfo>
               <Text weight="semibold" as="span" size="sm">
-                pixel-perfect Figma integration
-              </Text>{" "}
-              in template list and editor views, improving efficiency by 40%
-            </ListItem>
-          </List>
+                {"Team: "}
+              </Text>
+              <Text as="span" size="sm">
+                12 engineers (3 constant collaboration, 4 regular coordination
+                across product, design, and backend teams)
+              </Text>
+            </TeamInfo>
 
+            <List spacing="sm">
+              <ListItem size="sm">
+                Collaborated with product, design, and backend teams to deliver
+                features for a high-traffic digital ad platform serving 10K+
+                marketing teams across multiple channels
+              </ListItem>
+              <ListItem size="sm">
+                Standardized developer workflows with Windows WSL2 and CI/CD
+                automation, reducing onboarding time from 2 days to 4 hours and
+                cutting build/test friction
+              </ListItem>
+              <ListItem size="sm">
+                Identified and resolved performance bottlenecks, improving
+                template rendering speed by 35% and reducing overall CPU load on
+                high-volume pages
+              </ListItem>
+              <ListItem size="sm">
+                Streamlined designer-to-developer handoff by implementing{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  pixel-perfect Figma integration
+                </Text>{" "}
+                in template list and editor views, improving efficiency by 40%
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>
               Digital Ad Platform (Creatopy @ Creatopy)
@@ -752,47 +759,48 @@ export function Resume() {
 
         {/* La3eb */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Senior Frontend Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>La3eb</ExperienceTitle>
-              <ExperienceDate>Nov 2021 - Mar 2022</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Senior Frontend Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>La3eb</ExperienceTitle>
+                <ExperienceDate>Nov 2021 - Mar 2022</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              12 engineers (3 constant collaboration, 7 regular coordination
-              with product and backend teams)
-            </Text>
-          </TeamInfo>
+            <TeamInfo>
+              <Text weight="semibold" as="span" size="sm">
+                {"Team: "}
+              </Text>
+              <Text as="span" size="sm">
+                12 engineers (3 constant collaboration, 7 regular coordination
+                with product and backend teams)
+              </Text>
+            </TeamInfo>
 
-          <List spacing="sm">
-            <ListItem size="sm">
-              Collaborated across product, design, and backend teams to deliver
-              features for a high-traffic superapp serving GCC users
-            </ListItem>
-            <ListItem size="sm">
-              Standardized UI/UX patterns by creating a reusable component
-              library adopted by 3 internal teams
-            </ListItem>
-            <ListItem size="sm">
-              Modernized legacy React codebase with hooks and best practices,
-              improving maintainability and developer productivity
-            </ListItem>
-            <ListItem size="sm">
-              Contributed to performance-minded culture by identifying
-              bottlenecks and implementing frontend optimizations
-            </ListItem>
-            <ListItem size="sm">
-              Streamlined development processes with CI/CD and documentation
-              standards
-            </ListItem>
-          </List>
-
+            <List spacing="sm">
+              <ListItem size="sm">
+                Collaborated across product, design, and backend teams to
+                deliver features for a high-traffic superapp serving GCC users
+              </ListItem>
+              <ListItem size="sm">
+                Standardized UI/UX patterns by creating a reusable component
+                library adopted by 3 internal teams
+              </ListItem>
+              <ListItem size="sm">
+                Modernized legacy React codebase with hooks and best practices,
+                improving maintainability and developer productivity
+              </ListItem>
+              <ListItem size="sm">
+                Contributed to performance-minded culture by identifying
+                bottlenecks and implementing frontend optimizations
+              </ListItem>
+              <ListItem size="sm">
+                Streamlined development processes with CI/CD and documentation
+                standards
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>Superapp Platform (La3eb @ La3eb)</ProjectTitle>
             <List spacing="sm">
@@ -850,48 +858,50 @@ export function Resume() {
 
         {/* KAÇPARA Inc */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Lead Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>KAÇPARA Inc</ExperienceTitle>
-              <ExperienceDate>Dec 2020 - Nov 2021</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Lead Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>KAÇPARA Inc</ExperienceTitle>
+                <ExperienceDate>Dec 2020 - Nov 2021</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              5 total (2 constant collaboration, 3 regular stakeholder
-              coordination)
-            </Text>
-          </TeamInfo>
+            <TeamInfo>
+              <Text weight="semibold" as="span" size="sm">
+                {"Team: "}
+              </Text>
+              <Text as="span" size="sm">
+                5 total (2 constant collaboration, 3 regular stakeholder
+                coordination)
+              </Text>
+            </TeamInfo>
 
-          <List spacing="sm">
-            <ListItem size="sm">
-              Launched SaaS platform serving 7 renovation market, handling 20K+
-              quote requests in first week
-            </ListItem>
-            <ListItem size="sm">
-              Facilitated cross-department collaboration, translating complex
-              business requirements into scalable technical solutions
-            </ListItem>
-            <ListItem size="sm">
-              Established CI/CD pipelines with automated testing, blue-green
-              deployments, and monitoring to ensure reliable and maintainable
-              operations
-            </ListItem>
-            <ListItem size="sm">
-              Achieved 84% customer satisfaction based on early user feedback
-              and retention rates
-            </ListItem>
-            <ListItem size="sm">
-              Enabled cost estimates across 15+ renovation categories with
-              real-time quote generation, processing 200K+ calculations monthly
-            </ListItem>
-          </List>
-
+            <List spacing="sm">
+              <ListItem size="sm">
+                Launched SaaS platform serving 7 renovation market, handling
+                20K+ quote requests in first week
+              </ListItem>
+              <ListItem size="sm">
+                Facilitated cross-department collaboration, translating complex
+                business requirements into scalable technical solutions
+              </ListItem>
+              <ListItem size="sm">
+                Established CI/CD pipelines with automated testing, blue-green
+                deployments, and monitoring to ensure reliable and maintainable
+                operations
+              </ListItem>
+              <ListItem size="sm">
+                Achieved 84% customer satisfaction based on early user feedback
+                and retention rates
+              </ListItem>
+              <ListItem size="sm">
+                Enabled cost estimates across 15+ renovation categories with
+                real-time quote generation, processing 200K+ calculations
+                monthly
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>SaaS Renovation Cost Platform (KAÇPARA)</ProjectTitle>
             <List spacing="sm">
@@ -955,71 +965,74 @@ export function Resume() {
 
         {/* Orenda Software */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>Orenda Software</ExperienceTitle>
-              <ExperienceDate>Dec 2018 - Dec 2020</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>Orenda Software</ExperienceTitle>
+                <ExperienceDate>Dec 2018 - Dec 2020</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              12+ engineers (7 constant collaboration including moderators, 12+
-              regular coordination across frontend, backend, and operations)
-            </Text>
-          </TeamInfo>
+            <TeamInfo>
+              <Text weight="semibold" as="span" size="sm">
+                {"Team: "}
+              </Text>
+              <Text as="span" size="sm">
+                12+ engineers (7 constant collaboration including moderators,
+                12+ regular coordination across frontend, backend, and
+                operations)
+              </Text>
+            </TeamInfo>
 
-          <List spacing="sm">
-            <ListItem size="sm">
-              Built a{" "}
-              <Text weight="semibold" as="span" size="sm">
-                Pusher-compatible WebSocket solution
-              </Text>{" "}
-              with Node.js, reducing latency by{" "}
-              <Text weight="semibold" as="span" size="sm">
-                60%
-              </Text>{" "}
-              and cutting monthly costs by{" "}
-              <Text weight="semibold" as="span" size="sm">
-                $5K–$10K
-              </Text>
-            </ListItem>
-            <ListItem size="sm">
-              Led backend migration from PHP to Node.js for real-time features
-              (exchange operations, wallet management), mentoring 3 developers
-              on scalable{" "}
-              <Text weight="semibold" as="span" size="sm">
-                Node.js architecture
-              </Text>{" "}
-              for high-frequency trading
-            </ListItem>
-            <ListItem size="sm">
-              Implemented monitoring and security using{" "}
-              <Text weight="semibold" as="span" size="sm">
-                Prometheus
-              </Text>
-              ,{" "}
-              <Text weight="semibold" as="span" size="sm">
-                Grafana
-              </Text>
-              , and{" "}
-              <Text weight="semibold" as="span" size="sm">
-                Kong Gateway
-              </Text>
-              , tracking WebSocket throughput, frame rates, memory usage, and
-              protecting the system from DDoS attacks
-            </ListItem>
-            <ListItem size="sm">
-              Collaborated with site moderators during TradingView integration
-              to understand financial chart requirements and trading workflows,
-              ensuring technical implementation matched user mental models
-            </ListItem>
-          </List>
-
+            <List spacing="sm">
+              <ListItem size="sm">
+                Built a{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Pusher-compatible WebSocket solution
+                </Text>{" "}
+                with Node.js, reducing latency by{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  60%
+                </Text>{" "}
+                and cutting monthly costs by{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  $5K–$10K
+                </Text>
+              </ListItem>
+              <ListItem size="sm">
+                Led backend migration from PHP to Node.js for real-time features
+                (exchange operations, wallet management), mentoring 3 developers
+                on scalable{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Node.js architecture
+                </Text>{" "}
+                for high-frequency trading
+              </ListItem>
+              <ListItem size="sm">
+                Implemented monitoring and security using{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Prometheus
+                </Text>
+                ,{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Grafana
+                </Text>
+                , and{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  Kong Gateway
+                </Text>
+                , tracking WebSocket throughput, frame rates, memory usage, and
+                protecting the system from DDoS attacks
+              </ListItem>
+              <ListItem size="sm">
+                Collaborated with site moderators during TradingView integration
+                to understand financial chart requirements and trading
+                workflows, ensuring technical implementation matched user mental
+                models
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>
               Cryptocurrency Exchange Platform (Sistemkoin @ Orenda)
@@ -1068,38 +1081,39 @@ export function Resume() {
 
         {/* Talha IT */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>Talha IT</ExperienceTitle>
-              <ExperienceDate>Jul 2017 - Dec 2018</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>Talha IT</ExperienceTitle>
+                <ExperienceDate>Jul 2017 - Dec 2018</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              5 engineers (2 constant collaboration, 3 regular coordination)
-            </Text>
-          </TeamInfo>
+            <TeamInfo>
+              <Text weight="semibold" as="span" size="sm">
+                {"Team: "}
+              </Text>
+              <Text as="span" size="sm">
+                5 engineers (2 constant collaboration, 3 regular coordination)
+              </Text>
+            </TeamInfo>
 
-          <List spacing="sm">
-            <ListItem size="sm">
-              Contributed to fast-paced, high-stakes projects with real-time and
-              high-throughput requirements
-            </ListItem>
-            <ListItem size="sm">
-              Collaborated with cross-functional teams including frontend,
-              backend, and DevOps engineers to deliver reliable systems
-            </ListItem>
-            <ListItem size="sm">
-              Mentored peers on coding best practices and debugging strategies
-              on JavaScript environments
-            </ListItem>
-          </List>
-
+            <List spacing="sm">
+              <ListItem size="sm">
+                Contributed to fast-paced, high-stakes projects with real-time
+                and high-throughput requirements
+              </ListItem>
+              <ListItem size="sm">
+                Collaborated with cross-functional teams including frontend,
+                backend, and DevOps engineers to deliver reliable systems
+              </ListItem>
+              <ListItem size="sm">
+                Mentored peers on coding best practices and debugging strategies
+                on JavaScript environments
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>
               Real-time Auction Platform (Bihale @ Talha IT)
@@ -1191,51 +1205,52 @@ export function Resume() {
 
         {/* GD Holding Inc */}
         <Article>
-          <ExperienceHeader>
-            <ExperienceTitle>Full-stack Developer</ExperienceTitle>
-            <ExperienceDetails>
-              <ExperienceTitle>GD Holding Inc</ExperienceTitle>
-              <ExperienceDate>Jun 2015 - Jun 2017</ExperienceDate>
-            </ExperienceDetails>
-          </ExperienceHeader>
+          <ArticleHeader>
+            <ExperienceHeader>
+              <ExperienceTitle>Full-stack Developer</ExperienceTitle>
+              <ExperienceDetails>
+                <ExperienceTitle>GD Holding Inc</ExperienceTitle>
+                <ExperienceDate>Jun 2015 - Jun 2017</ExperienceDate>
+              </ExperienceDetails>
+            </ExperienceHeader>
 
-          <TeamInfo>
-            <Text weight="semibold" as="span" size="sm">
-              Team:
-            </Text>
-            <Text as="span" size="sm">
-              13 engineers (7 constant collaboration including legal/accounting
-              stakeholders, 12+ regular coordination)
-            </Text>
-          </TeamInfo>
-
-          <List spacing="sm">
-            <ListItem size="sm">
-              Contributed to multiple full-stack projects, gaining hands-on
-              experience across{" "}
+            <TeamInfo>
               <Text weight="semibold" as="span" size="sm">
-                frontend, backend, and API integration
+                {"Team: "}
               </Text>
-            </ListItem>
-            <ListItem size="sm">
-              Collaborated with cross-functional teams to deliver feature
-              modules impacting billing workflows and recruitment processes
-            </ListItem>
-            <ListItem size="sm">
-              Learned to architect distributed systems and real-time pipelines,
-              improving{" "}
-              <Text weight="semibold" as="span" size="sm">
-                data accuracy, scalability, and operational efficiency
+              <Text as="span" size="sm">
+                13 engineers (7 constant collaboration including
+                legal/accounting stakeholders, 12+ regular coordination)
               </Text>
-            </ListItem>
-            <ListItem size="sm">
-              Partnered with legal/accounting stakeholders during custom invoice
-              builder development, learning invoice and waybill compliance
-              requirements to ensure drag-and-drop system produced legally valid
-              outputs with correct formatting
-            </ListItem>
-          </List>
+            </TeamInfo>
 
+            <List spacing="sm">
+              <ListItem size="sm">
+                Contributed to multiple full-stack projects, gaining hands-on
+                experience across{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  frontend, backend, and API integration
+                </Text>
+              </ListItem>
+              <ListItem size="sm">
+                Collaborated with cross-functional teams to deliver feature
+                modules impacting billing workflows and recruitment processes
+              </ListItem>
+              <ListItem size="sm">
+                Learned to architect distributed systems and real-time
+                pipelines, improving{" "}
+                <Text weight="semibold" as="span" size="sm">
+                  data accuracy, scalability, and operational efficiency
+                </Text>
+              </ListItem>
+              <ListItem size="sm">
+                Partnered with legal/accounting stakeholders during custom
+                invoice builder development, learning invoice and waybill
+                compliance requirements to ensure drag-and-drop system produced
+                legally valid outputs with correct formatting
+              </ListItem>
+            </List>
+          </ArticleHeader>
           <ProjectContainer>
             <ProjectTitle>
               Customer Relationship Management (TRCRM @ GD Holding)
@@ -1317,39 +1332,41 @@ export function Resume() {
         </Article>
       </Section>
 
-      {/* Education */}
-      <Section>
-        <Heading level={2}>Education</Heading>
-        <EducationHeader>
-          <ExperienceTitle size="base">Kocaeli University</ExperienceTitle>
-          <ExperienceDetails>
-            <ExperienceTitle size="base">
-              International Relations
-            </ExperienceTitle>
-            <ExperienceDate>2016</ExperienceDate>
-          </ExperienceDetails>
-        </EducationHeader>
-        <EducationNote>
-          Transitioned to full-time software development to focus on technical
-          expertise
-        </EducationNote>
-      </Section>
+      <div className="grid grid-cols-2 gap-2">
+        {/* Education */}
+        <Section>
+          <Heading level={2}>Education</Heading>
+          <EducationHeader layout="horizontal">
+            <ExperienceTitle size="base">Kocaeli University</ExperienceTitle>
+            <ExperienceDetails>
+              <ExperienceTitle size="base">
+                International Relations
+              </ExperienceTitle>
+              <ExperienceDate>2016</ExperienceDate>
+            </ExperienceDetails>
+          </EducationHeader>
+          <EducationNote>
+            Transitioned to full-time software development to focus on technical
+            expertise
+          </EducationNote>
+        </Section>
 
-      {/* Certifications & Professional Development */}
-      <Section>
-        <Heading level={2}>Certifications & Professional Development</Heading>
-        <EducationHeader>
-          <ExperienceTitle size="base">
-            AWS Certified Solutions Architect – Associate
-          </ExperienceTitle>
-          <ExperienceDate>(In Progress, Expected Q1 2026)</ExperienceDate>
-        </EducationHeader>
-      </Section>
+        {/* Certifications & Professional Development */}
+        <Section>
+          <Heading level={2}>Certifications & Professional Development</Heading>
+          <EducationHeader>
+            <ExperienceTitle size="base">
+              AWS Certified Solutions Architect – Associate
+            </ExperienceTitle>
+            <ExperienceDate>(In Progress, Expected Q1 2026)</ExperienceDate>
+          </EducationHeader>
+        </Section>
+      </div>
 
       {/* Continuous Learning & Professional Courses */}
-      <Section>
+      <Section className="print:break-inside-avoid">
         <Heading level={2}>Continuous Learning & Professional Courses</Heading>
-        <CompetencyGrid>
+        <CompetencyGrid spacing="none">
           <EducationHeader>
             <ExperienceTitle size="base">
               Advanced TypeScript Patterns & Performance Optimization

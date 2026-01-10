@@ -1,21 +1,21 @@
 // ==================== Base Components ====================
 import { classed } from "@/lib/utils";
-import { ComponentPropsWithoutRef, isValidElement, ReactNode } from "react";
+import { isValidElement } from "react";
 
 export const Container = classed(
   "div",
-  "max-w-5xl mx-auto p-8 font-sans print:font-serif"
+  "max-w-5xl mx-auto px-6 py-4 print:px-0 print:py-0 font-sans print:font-serif text-gray-900"
 );
 
-export const Header = classed("header", "mb-8");
+export const Header = classed("header", "mb-4 border-b-2 border-gray-900 pb-4");
 
-export const Heading = classed("h1", "text-4xl font-bold mb-4", {
+export const Heading = classed("h1", "font-bold", {
   variants: {
     level: {
-      1: "text-2xl font-bold",
-      2: "text-xl font-bold border-b-2 border-gray-300 pb-2",
-      3: "text-lg font-semibold",
-      4: "text-md font-semibold",
+      1: "text-xl uppercase tracking-tight",
+      2: "text-md font-bold border-b border-gray-300 pb-1 uppercase text-gray-800",
+      3: "text-sm font-semibold",
+      4: "text-xs font-semibold",
     },
   },
   defaultVariants: {
@@ -23,12 +23,12 @@ export const Heading = classed("h1", "text-4xl font-bold mb-4", {
   },
 });
 
-export const Section = classed("section", "mb-8", {
+export const Section = classed("section", "mb-4", {
   variants: {
     spacing: {
-      sm: "mb-4",
-      md: "mb-8",
-      lg: "mb-12",
+      sm: "mb-2",
+      md: "mb-4",
+      lg: "mb-6",
     },
   },
   defaultVariants: {
@@ -36,18 +36,17 @@ export const Section = classed("section", "mb-8", {
   },
 });
 
-export const Article = classed(
-  "article",
-  "mb-6 pb-6 border-b border-gray-200 last:border-b-0"
-);
+export const Article = classed("article", "mb-3");
 
-export const TextCmp = classed("p", " leading-relaxed", {
+export const ArticleHeader = classed("div", "print:break-inside-avoid");
+
+export const TextCmp = classed("p", "leading-snug", {
   variants: {
     size: {
-      xs: "text-xs",
-      sm: "text-sm",
-      base: "text-base",
-      lg: "text-lg",
+      xs: "text-[11px]",
+      sm: "text-xs",
+      base: "text-sm",
+      lg: "text-base",
     },
     weight: {
       normal: "font-normal",
@@ -56,9 +55,9 @@ export const TextCmp = classed("p", " leading-relaxed", {
       bold: "font-bold",
     },
     color: {
-      default: "",
-      muted: "",
-      dark: "",
+      default: "text-gray-800",
+      muted: "text-gray-500",
+      dark: "text-black",
     },
   },
   defaultVariants: {
@@ -77,7 +76,6 @@ export function Text({
   const Cmp = as || "p";
   const textCmp = TextCmp(props);
 
-  // For passing type-check
   if (isValidElement(textCmp) && textCmp.props instanceof Object) {
     return <Cmp {...textCmp.props} />;
   }
@@ -87,31 +85,17 @@ export function Text({
 
 // ==================== Contact Components ====================
 
-export const Contact = classed("div", "grid text-sm", {
-  variants: {
-    orientation: {
-      horizontal: "flex-row",
-      vertical: "flex-col",
-    },
-    spacing: {
-      xs: "gap-1",
-      sm: "gap-2",
-      md: "gap-4",
-      lg: "gap-6",
-    },
-  },
-  defaultVariants: {
-    orientation: "horizontal",
-    spacing: "md",
-  },
-});
+export const Contact = classed(
+  "div",
+  "flex flex-wrap gap-x-4 gap-y-1 mt-2 text-[11px]"
+);
 
 export const ContactSection = classed(
   "div",
-  "flex flex-wrap justify-between gap-4 text-sm text-gray-700"
+  "flex flex-wrap gap-x-4 items-center"
 );
 
-export const ContactItem = classed("div", "flex items-center gap-2");
+export const ContactItem = classed("div", "flex items-center gap-1");
 
 export const ContactLink = classed(
   "a",
@@ -119,9 +103,9 @@ export const ContactLink = classed(
   {
     variants: {
       variant: {
-        default: "hover:text-blue-600",
-        underline: "hover:text-blue-600 hover:underline",
-        bold: "hover:text-blue-600 font-semibold",
+        default: "",
+        underline: "underline hover:no-underline",
+        bold: "font-semibold",
       },
     },
     defaultVariants: {
@@ -134,65 +118,66 @@ export const ContactLink = classed(
 
 export const ExperienceHeader = classed(
   "div",
-  "flex flex-wrap justify-between items-start mb-2"
+  "flex justify-between items-baseline mb-0.5"
 );
 
-export const ExperienceTitle = classed("strong", "font-semibold", {
+export const ExperienceTitle = classed("strong", "font-bold", {
   variants: {
     size: {
-      base: "text-base",
-      lg: "text-lg",
+      base: "text-sm",
+      lg: "text-base",
     },
   },
   defaultVariants: {
-    size: "lg",
+    size: "base",
   },
 });
 
-export const ExperienceDetails = classed("div", "flex flex-wrap gap-4");
+export const ExperienceDetails = classed("div", "flex gap-2 items-baseline");
 
-export const ExperienceDate = classed("em", "italic text-gray-600 text-sm");
-
-export const TeamInfo = classed(
-  "p",
-  "text-sm text-gray-600 mb-3 flex items-start gap-2"
+export const ExperienceDate = classed(
+  "span",
+  "text-[11px] font-medium text-gray-600 uppercase"
 );
 
-export const ProjectContainer = classed("div", "ml-4 mt-4 first:mt-0");
+export const TeamInfo = classed("p", "text-[11px] text-gray-500 mb-2 italic");
 
-export const ProjectTitle = classed("h4", "font-semibold text-md mb-2");
-
-export const TechStack = classed(
-  "p",
-  "text-xs text-gray-600 flex items-start gap-2"
+export const ProjectContainer = classed(
+  "div",
+  "mt-2 pl-3 border-l border-gray-200 print:break-inside-avoid"
 );
+
+export const ProjectTitle = classed(
+  "h4",
+  "font-bold text-xs mb-1 text-gray-700"
+);
+
+export const TechStack = classed("p", "text-[10px] text-gray-500 mt-1");
 
 // ==================== List Components ====================
 
-export const List = classed("ul", "list-disc list-inside space-y-2 ml-4", {
-  variants: {
-    spacing: {
-      sm: "space-y-1",
-      md: "space-y-2",
-      lg: "space-y-3",
+export const List = classed(
+  "ul",
+  "list-disc list-outside space-y-0.5 ml-4 print:break-inside-avoid",
+  {
+    variants: {
+      spacing: {
+        sm: "space-y-0.5",
+        md: "space-y-1",
+        lg: "space-y-2",
+      },
     },
-    style: {
-      disc: "list-disc",
-      decimal: "list-decimal",
-      none: "list-none",
+    defaultVariants: {
+      spacing: "sm",
     },
-  },
-  defaultVariants: {
-    spacing: "md",
-    style: "disc",
-  },
-});
+  }
+);
 
-export const ListItem = classed("li", "text-gray-700", {
+export const ListItem = classed("li", "text-gray-700 leading-tight", {
   variants: {
     size: {
-      sm: "text-sm",
-      base: "text-base",
+      sm: "text-[11px]",
+      base: "text-xs",
     },
   },
   defaultVariants: {
@@ -202,13 +187,13 @@ export const ListItem = classed("li", "text-gray-700", {
 
 // ==================== Callout Component ====================
 
-export const Callout = classed("div", "mt-4 p-4 border-l-4 rounded-r", {
+export const Callout = classed("div", "my-2 p-2 border-l-2 bg-gray-50", {
   variants: {
     variant: {
-      info: "bg-blue-50 border-blue-500",
-      success: "bg-green-50 border-green-500",
-      warning: "bg-yellow-50 border-yellow-500",
-      default: "bg-gray-50 border-gray-500",
+      info: "border-blue-400",
+      success: "border-green-400",
+      warning: "border-yellow-400",
+      default: "border-gray-400",
     },
   },
   defaultVariants: {
@@ -216,52 +201,66 @@ export const Callout = classed("div", "mt-4 p-4 border-l-4 rounded-r", {
   },
 });
 
-export const CalloutTitle = classed("h3", "font-semibold mb-2");
+export const CalloutTitle = classed("h3", "font-bold text-[11px] mb-0.5");
 
 // ==================== Competency Components ====================
 
-export const CompetencyGrid = classed("div", "space-y-2");
+export const CompetencyGrid = classed("div", "grid grid-cols-2", {
+  variants: {
+    spacing: {
+      none: "",
+      sm: "gap-2",
+    },
+  },
+  defaultVariants: {
+    spacing: "sm",
+  },
+});
 
-export const CompetencyItem = classed("div", "");
+export const CompetencyItem = classed("div", "break-inside-avoid");
 
-export const CompetencyTitle = classed("h3", "font-semibold text-lg mb-2");
+export const CompetencyTitle = classed("h3", "font-bold text-xs mb-0.5");
 
-export const CompetencyContent = classed("p", "text-gray-700");
+export const CompetencyContent = classed(
+  "p",
+  "text-[11px] text-gray-600 leading-tight"
+);
 
 // ==================== Skills Components ====================
 
-export const SkillsGrid = classed("div", "space-y-3");
+export const SkillsGrid = classed("div", "grid grid-cols-2 gap-2");
 
-export const SkillCategory = classed("div", "");
+export const SkillCategory = classed("div", "break-inside-avoid");
 
-export const SkillTitle = classed("h3", "font-semibold mb-1");
+export const SkillTitle = classed(
+  "h3",
+  "font-bold text-xs border-b border-gray-100 mb-1"
+);
 
-export const SkillList = classed("p", "text-sm text-gray-700");
+export const SkillList = classed(
+  "p",
+  "text-[11px] text-gray-600 leading-relaxed"
+);
 
 // ==================== Education Components ====================
 
-export const EducationHeader = classed(
-  "div",
-  "flex flex-wrap justify-between items-start mb-2"
-);
+export const EducationHeader = classed("div", "", {
+  variants: {
+    layout: {
+      vertical: "grid",
+      horizontal: "flex",
+    },
+  },
+  defaultVariants: {
+    layout: "vertical",
+  },
+});
 
-export const EducationNote = classed("p", "text-sm italic text-gray-600 mt-1");
+export const EducationNote = classed("p", "text-xs italic text-gray-500");
 
 // ==================== Footer ====================
 
 export const Footer = classed(
   "footer",
-  "text-center text-sm text-gray-500 mt-12 pt-6 border-t border-gray-300"
-);
-
-// ==================== Helper Components ====================
-
-interface IconProps extends ComponentPropsWithoutRef<"span"> {
-  children: ReactNode;
-}
-
-export const IconWrapper = ({ children, className, ...props }: IconProps) => (
-  <span className={className} {...props}>
-    {children}
-  </span>
+  "text-center text-[10px] text-gray-400 mt-6 pt-4 border-t border-gray-100"
 );
