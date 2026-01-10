@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: GITHUB_REPO ? "export" : "standalone",
   basePath: GITHUB_REPO ? `/${GITHUB_REPO}` : "",
-  assetPrefix: GITHUB_REPO ? `/${GITHUB_REPO}/` : "",
 };
 
 export default nextConfig;
