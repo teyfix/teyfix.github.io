@@ -227,46 +227,11 @@ export const Callout = classed("div", "my-2 border-l-2 bg-gray-50 p-2", {
 
 export const CalloutTitle = classed("h3", "mb-0.5 text-[11px] font-bold");
 
-// ==================== Competency Components ====================
-
-export const CompetencyGrid = classed(
-  "div",
-  "grid grid-cols-1 lg:grid-cols-2 print:grid-cols-2",
-  {
-    variants: {
-      spacing: {
-        none: "",
-        sm: "gap-2",
-      },
-    },
-    defaultVariants: {
-      spacing: "sm",
-    },
-  },
-);
-
-export const CompetencyItem = withHideable(
-  classed("div", "break-inside-avoid", {
-    variants: {
-      expand: {
-        true: "lg:col-span-2 print:col-span-2",
-      },
-    },
-  }),
-);
-
-export const CompetencyTitle = classed("h3", "mb-0.5 text-xs font-bold");
-
-export const CompetencyContent = classed(
-  "p",
-  "text-[11px] leading-tight text-gray-600",
-);
-
 // ==================== Skills Components ====================
 
 export const SkillsGrid = classed(
   "div",
-  "grid gap-2 lg:grid-cols-2 print:col-span-2",
+  "grid gap-2 lg:grid-cols-2 print:grid-cols-2",
 );
 
 export const SkillCategory = withHideable(

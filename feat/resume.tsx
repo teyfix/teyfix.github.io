@@ -5,10 +5,6 @@ import {
   ArticleHeader,
   Callout,
   CalloutTitle,
-  CompetencyContent,
-  CompetencyGrid,
-  CompetencyItem,
-  CompetencyTitle,
   Contact,
   ContactItem,
   ContactLink,
@@ -145,52 +141,50 @@ export function Resume() {
       {/* Core Competencies */}
       <Section>
         <Heading level={2}>Core Competencies</Heading>
-        <CompetencyGrid>
-          <CompetencyItem>
-            <CompetencyTitle>
-              Technical Leadership & Architecture
-            </CompetencyTitle>
-            <CompetencyContent>
+        <SkillsGrid>
+          <SkillCategory>
+            <SkillTitle>Technical Leadership & Architecture</SkillTitle>
+            <SkillList>
               System Design • Microservices Architecture • API Design • Design
               Patterns • Domain-Driven Design • Event-Driven Architecture
-            </CompetencyContent>
-          </CompetencyItem>
+            </SkillList>
+          </SkillCategory>
 
-          <CompetencyItem>
-            <CompetencyTitle>Team Leadership</CompetencyTitle>
-            <CompetencyContent>
+          <SkillCategory>
+            <SkillTitle>Team Leadership</SkillTitle>
+            <SkillList>
               Cross-Functional Leadership • Engineering Mentorship • Code Review
               • Agile/Scrum • Sprint Planning
-            </CompetencyContent>
-          </CompetencyItem>
+            </SkillList>
+          </SkillCategory>
 
-          <CompetencyItem>
-            <CompetencyTitle>Performance & Optimization</CompetencyTitle>
-            <CompetencyContent>
+          <SkillCategory>
+            <SkillTitle>Performance & Optimization</SkillTitle>
+            <SkillList>
               Database Optimization • Application Performance • Scalability
               Engineering • Load Testing • Production Monitoring & Observability
-            </CompetencyContent>
-          </CompetencyItem>
+            </SkillList>
+          </SkillCategory>
 
-          <CompetencyItem>
-            <CompetencyTitle>DevOps & Cloud</CompetencyTitle>
-            <CompetencyContent>
+          <SkillCategory>
+            <SkillTitle>DevOps & Cloud</SkillTitle>
+            <SkillList>
               CI/CD Pipelines • Infrastructure as Code • Container Orchestration
               • AWS/GCP • Production Management
-            </CompetencyContent>
-          </CompetencyItem>
+            </SkillList>
+          </SkillCategory>
 
-          <CompetencyItem expand>
-            <CompetencyTitle>Methodologies & Practices</CompetencyTitle>
-            <CompetencyContent>
+          <SkillCategory expand>
+            <SkillTitle>Methodologies & Practices</SkillTitle>
+            <SkillList>
               Agile/Scrum, Test-Driven Development (TDD), Continuous
               Integration/Continuous Deployment (CI/CD), Code Review, Technical
               Documentation, Security-First Development (OWASP Top 10 awareness,
               dependency scanning, secrets management), API Security (rate
               limiting, authentication, authorization patterns)
-            </CompetencyContent>
-          </CompetencyItem>
-        </CompetencyGrid>
+            </SkillList>
+          </SkillCategory>
+        </SkillsGrid>
       </Section>
 
       {/* Technical Skills */}
@@ -1353,7 +1347,7 @@ export function Resume() {
         </Article>
       </Section>
 
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 print:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 print:grid-cols-2">
         {/* Education */}
         <Section>
           <Heading level={2}>Education</Heading>
@@ -1387,7 +1381,7 @@ export function Resume() {
       {/* Continuous Learning & Professional Courses */}
       <Section className="print:break-inside-avoid">
         <Heading level={2}>Continuous Learning & Professional Courses</Heading>
-        <CompetencyGrid spacing="none">
+        <SkillsGrid>
           <EducationHeader>
             <ExperienceTitle size="base">
               Advanced TypeScript Patterns & Performance Optimization
@@ -1423,7 +1417,7 @@ export function Resume() {
             </ExperienceTitle>
             <ExperienceDate>(Coursera, 2024)</ExperienceDate>
           </EducationHeader>
-        </CompetencyGrid>
+        </SkillsGrid>
       </Section>
 
       {/* Open Source Contributions */}
