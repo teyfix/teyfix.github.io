@@ -1,3 +1,6 @@
+"use client";
+
+import { withHideable } from "@/components/hoc/hideable";
 // ==================== Base Components ====================
 import { classed } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
@@ -5,7 +8,7 @@ import { isValidElement } from "react";
 
 export const Container = classed(
   "div",
-  "mx-auto max-w-5xl px-3 py-4 font-sans text-gray-900 lg:px-6 print:px-0 print:py-0 print:font-serif",
+  "mx-auto max-w-5xl px-3 py-4 font-sans text-gray-900 lg:px-6 print:p-0! print:font-serif",
 );
 
 export const Header = classed("header", "mb-4 border-b-2 border-gray-900 pb-4");
@@ -34,20 +37,22 @@ export const Heading = ({
   return <Cmp {...props} className={headingVariants({ level })} />;
 };
 
-export const Section = classed("section", "mb-4", {
-  variants: {
-    spacing: {
-      sm: "mb-2",
-      md: "mb-4",
-      lg: "mb-6",
+export const Section = withHideable(
+  classed("section", "mb-4", {
+    variants: {
+      spacing: {
+        sm: "mb-2",
+        md: "mb-4",
+        lg: "mb-6",
+      },
     },
-  },
-  defaultVariants: {
-    spacing: "sm",
-  },
-});
+    defaultVariants: {
+      spacing: "sm",
+    },
+  }),
+);
 
-export const Article = classed("article", "mb-3");
+export const Article = withHideable(classed("article", "mb-3"));
 
 export const ArticleHeader = classed("div", "print:break-inside-avoid");
 
@@ -162,9 +167,8 @@ export const TeamInfo = classed(
   "mt-2 mb-2 text-[11px] text-gray-500 italic lg:mt-0 print:mt-0",
 );
 
-export const ProjectContainer = classed(
-  "div",
-  "mt-2 border-l border-gray-200 pl-3 print:break-inside-avoid",
+export const ProjectContainer = withHideable(
+  classed("div", "mt-2 border-l border-gray-200 pl-3 print:break-inside-avoid"),
 );
 
 export const ProjectTitle = classed(
@@ -241,13 +245,15 @@ export const CompetencyGrid = classed(
   },
 );
 
-export const CompetencyItem = classed("div", "break-inside-avoid", {
-  variants: {
-    expand: {
-      true: "lg:col-span-2 print:col-span-2",
+export const CompetencyItem = withHideable(
+  classed("div", "break-inside-avoid", {
+    variants: {
+      expand: {
+        true: "lg:col-span-2 print:col-span-2",
+      },
     },
-  },
-});
+  }),
+);
 
 export const CompetencyTitle = classed("h3", "mb-0.5 text-xs font-bold");
 
@@ -263,13 +269,15 @@ export const SkillsGrid = classed(
   "grid gap-2 lg:grid-cols-2 print:col-span-2",
 );
 
-export const SkillCategory = classed("div", "break-inside-avoid", {
-  variants: {
-    expand: {
-      true: "lg:col-span-2 print:col-span-2",
+export const SkillCategory = withHideable(
+  classed("div", "break-inside-avoid", {
+    variants: {
+      expand: {
+        true: "lg:col-span-2 print:col-span-2",
+      },
     },
-  },
-});
+  }),
+);
 
 export const SkillTitle = classed(
   "h3",

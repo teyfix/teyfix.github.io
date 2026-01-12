@@ -1,5 +1,6 @@
 import "@/theme/globals.css";
 
+import { HideableProvider } from "@/components/hoc/hideable";
 import { classed } from "@/lib/utils";
 import ogImage from "@/public/og-image.jpeg";
 import { fontSans, fontSerif } from "@/theme/fonts";
@@ -83,7 +84,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Body>{children}</Body>
+      <Body>
+        <HideableProvider>{children}</HideableProvider>
+      </Body>
     </html>
   );
 }

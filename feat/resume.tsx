@@ -36,13 +36,22 @@ import {
   TechStack,
   Text,
 } from "./resume/reusable";
+import { ToggleHideable } from "./resume/toggle-hideable";
+import { TriggerPrint } from "./resume/trigger-print";
 
 export function Resume() {
   return (
     <Container>
       {/* Header Section */}
       <Header>
-        <Heading level={1}>Halil Teyfik Dolmaci</Heading>
+        <div className="flex justify-between">
+          <Heading level={1}>Halil Teyfik Dolmaci</Heading>
+
+          <div className="space-x-2.5 print:hidden">
+            <TriggerPrint />
+            <ToggleHideable />
+          </div>
+        </div>
 
         <Contact>
           <ContactSection>
